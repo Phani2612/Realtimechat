@@ -1,0 +1,39 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="button1">Go to Room 1</button>
+    <button id="button2">Go to Room 2</button>
+    <script src="/socket.io/socket.io.js"></script>
+    
+    <script>
+        const socket = io();
+
+        const button1 = document.querySelector("#button1");
+        const button2 = document.querySelector("#button2");
+
+        button1.addEventListener('click', function() {
+            socket.emit('joinRoom', 'Room1');
+            socket.emit('message',{room : "Room1" , message : "Arey mowa itu ra"})
+        });
+
+        button2.addEventListener('click', function() {
+            socket.emit('leaveRoom',"Room1")
+            socket.emit('joinRoom', 'Room2');
+            socket.emit('message',{room : "Room2" , message : "Arey pilla bacha"})
+            
+        });
+
+        socket.on('message', (msg) => {
+            const item = document.createElement('h1');
+            item.textContent = msg;
+            document.body.appendChild(item);
+        });
+    </script>
+</body>
+</html> -->
